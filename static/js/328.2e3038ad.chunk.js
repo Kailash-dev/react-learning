@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_learning=self.webpackChunkreact_learning||[]).push([[328],{328:(e,a,n)=>{n.r(a),n.d(a,{default:()=>t});n(43);var r=n(579);const t=()=>(0,r.jsx)("div",{style:{padding:"20px",margin:"10px 0",backgroundColor:"#e0f7fa",borderRadius:"8px",textAlign:"center",fontWeight:"600"},children:"\ud83c\udf89 This component was loaded lazily!"})}}]);
+//# sourceMappingURL=328.2e3038ad.chunk.js.map
