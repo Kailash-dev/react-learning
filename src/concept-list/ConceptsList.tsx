@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Card from '../components/Card';
+import Card from '../components/ReusableCard';
+
 
 
 const concepts = [
