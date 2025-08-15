@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+
 
 export default function LiftingStateUpComponent() {
-  const [temperature, setTemperature] = useState('');
+
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', padding: '20px', maxWidth: '800px', margin: 'auto' }}>

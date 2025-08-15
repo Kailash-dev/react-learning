@@ -1,11 +1,6 @@
-import React, { useRef } from 'react'
+
 
 export default function RefsComponent() {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const focusInput = () => {
-    inputRef.current?.focus();
-  };
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', padding: '20px', maxWidth: '800px', margin: 'auto' }}>

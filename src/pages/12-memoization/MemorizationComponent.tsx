@@ -1,24 +1,7 @@
-import React, { useCallback, useMemo, useState } from 'react'
-// A child component to demonstrate React.memo
-const ExpensiveComponent = React.memo(({ compute, value }: { compute: (num: number) => number; value: number }) => {
-  console.log('ExpensiveComponent rendered');
-  return <p>Computed value: {compute(value)}</p>;
-});
 
 export default function MemorizationComponent() {
-  const [count, setCount] = useState(0);
-  const [other, setOther] = useState(0);
-
-  // useCallback to memoize the function
-  const compute = useCallback((num: number) => {
-    console.log('Computing...');
-    let result = 0;
-    for (let i = 0; i < 1000000; i++) result += num;
-    return result;
-  }, []);
-
   // useMemo to memoize expensive calculation
-  const memoizedValue = useMemo(() => compute(count), [count, compute]);
+
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', padding: '20px', maxWidth: '800px', margin: 'auto' }}>

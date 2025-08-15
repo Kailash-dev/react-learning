@@ -1,9 +1,8 @@
-import React, { createContext, useState } from 'react'
-const ThemeContext = createContext<{ theme: string; toggleTheme: () => void } | undefined>(undefined);
+
 
 
 export default function ContextApiComponent() {
-     const [theme, setTheme] = useState('light');
+   
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', padding: '20px', maxWidth: '800px', margin: 'auto' }}>
       <h1 style={{ color: '#4A90E2' }}>React Context API</h1>

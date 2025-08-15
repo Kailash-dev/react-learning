@@ -1,26 +1,6 @@
-import React, { Component, ReactNode } from 'react'
 
-class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true };
-  }
 
-  componentDidCatch(error: Error, info: any) {
-    console.error('Error caught by Error Boundary:', error, info);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <h2>Something went wrong. Please try again later.</h2>;
-    }
-    return this.props.children;
-  }
-}
 export default function ErrorBoundariesComponent() {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', padding: '20px', maxWidth: '800px', margin: 'auto' }}>
