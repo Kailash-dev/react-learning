@@ -4,7 +4,7 @@ import AppRoutes from "./routes";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/react-learning">
       <AppRoutes />
     </Router>
   );
