@@ -1,47 +1,28 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ConceptsList from './concept-list/ConceptsList';
-import ConceptDetail from './ConceptDetail';
 import Home from './pages/Home/Index';
+import { conceptComponentMap } from './conceptComponentMap';
 
-const concepts = [
-  'functional-components',
-  'class-components',
-  'state-hooks',
-  'effect-hooks',
-  'context-api',
-  'routing',
-  'forms',
-  'lifting-state-up',
-  'refs',
-  'error-boundaries',
-  'portals',
-  'memoization',
-  'fragments',
-  'children-props',
-  'hoc',
-  'render-props',
-  'suspense-lazy-loading',
-  'testing',
-  'custom-hooks',
-  'profiler-api',
-  'strict-mode',
-  'error-handling-hooks',
-];
+// LazyRoute wrapper to simplify Suspense usage
+const LazyRoute = ({ Component }: { Component: React.LazyExoticComponent<React.FC> }) => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Component />
+  </Suspense>
+);
 
 export default function AppRoutes() {
   return (
     <Routes>
-       <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
       <Route path="/home" element={<Home />} />
       <Route path="/concepts" element={<ConceptsList />} />
 
-      {/* Dynamic concept detail routes */}
-      {concepts.map((concept) => (
+      {Object.entries(conceptComponentMap).map(([route, Component]) => (
         <Route
-          key={concept}
-          path={`/concepts/${concept}`}
-          element={<ConceptDetail conceptId={concept} />}
+          key={route}
+          path={`/concepts/${route}`}
+          element={<LazyRoute Component={Component} />}
         />
       ))}
     </Routes>
