@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
+
 const concepts = [
   'Functional Components',
   'Class Components',
